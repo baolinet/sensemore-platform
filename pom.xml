@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.sensemore</groupId>
+  <artifactId>sensemore-platform</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>sensemore-platform</name>
+  <url>http://maven.apache.org</url>
+
+<!--  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.8</version>
+ </parent> -->
+
+ <properties>
+        <java.version>21</java.version> <!-- 假设使用 Java 21 -->
+        <spring.boot.version>3.3.8</spring.boot.version>
+    </properties>
+
+
+ <modules>
+  <module>sensemore-tenant</module>
+  <module>sensemore-spi</module>
+  <module>sensemore-common</module>
+  <module>sensemore-core</module>
+  <module>sensemore-schedule</module>
+ </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 在这里添加所有子模块可能需要的依赖 -->
+            <!-- Spring Boot 依赖项 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 其他共享依赖项可以在这里定义 -->
+
+              <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.1</version>
+                <scope>test</scope>
+              </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+  <build>
+        <pluginManagement>
+            <plugins>
+
+    <!-- 示例：编译插件配置 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- 使用适当的版本 -->
+                <configuration>
+                    <source>21</source> <!-- Java 源版本 -->
+                    <target>21</target> <!-- Java 目标版本 -->
+                </configuration>
+            </plugin>
+
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                  </plugin>
+              </plugins>
+          </pluginManagement>
+  </build>
+</project>
