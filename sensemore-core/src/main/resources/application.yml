@@ -1,0 +1,21 @@
+
+    
+# application.yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: beans
+server:
+  port: 8081  # 将端口号修改为你想要的端口，例如 8081
+
+myapp:
+  name: MySpringApp
+  version: 1.0.0
+  description: This is a simple Spring application.
+  
+spring:
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=5m,recordStats=true

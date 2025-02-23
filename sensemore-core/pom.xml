@@ -22,13 +22,56 @@
         </dependency>
         <!-- 其他依赖项 -->
 
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <scope>test</scope>
+        </dependency>
 
-                <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <scope>test</scope>
+        <!-- 添加到你的pom.xml中 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+
+        <dependency>
+          <groupId>org.springframework.retry</groupId>
+          <artifactId>spring-retry</artifactId>
       </dependency>
-    </dependencies>
+
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate.validator</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>6.2.0.Final</version> <!-- 请根据需要选择合适的版本 -->
+      </dependency>
+      <dependency>
+          <groupId>javax.validation</groupId>
+          <artifactId>validation-api</artifactId>
+          <version>2.0.1.Final</version> <!-- 请根据需要选择合适的版本 -->
+      </dependency>
+      <dependency>
+          <groupId>org.glassfish</groupId>
+          <artifactId>javax.el</artifactId>
+          <version>3.0.0</version> <!-- 这是 EL 表达式语言的实现 -->
+      </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-cache</artifactId>
+    </dependency>
+    <!-- 示例：使用Caffeine作为缓存 -->
+    <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+    </dependency>
+
+  </dependencies>
 
     <build>
     <plugins>
