@@ -56,6 +56,17 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version> <!-- 或更高版本 -->
+          <configuration>
+                <source>21</source> <!-- 指定源代码的JDK版本 -->
+                <target>21</target> <!-- 指定目标代码的JDK版本 -->
+            </configuration>
+      </plugin>
+
     </plugins>
   </build>
 </project>

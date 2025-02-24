@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: weather_route
+          uri: http://send.wxbus163.cn/weather/getCityList
+          predicates:
+          - Path=/weather/getCityList/**
+  main:
+    web-application-type: reactive
+server:
+  port: 8088
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.server: DEBUG
+    reactor.netty.http.client: DEBUG
+  
+  
