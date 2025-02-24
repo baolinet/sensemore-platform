@@ -20,12 +20,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- 其他依赖项 -->
-
-                <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <scope>test</scope>
-      </dependency>
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>

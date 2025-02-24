@@ -10,10 +10,13 @@ import javax.validation.ValidatorFactory;
 import javax.validation.constraints.NotNull;
 
 public class ValidationSample {
-    class User {
+    public static class User {
         @NotNull(message = "Name cannot be null")
         private String name;
     
+        public User(String name){
+            this.name = name;
+        }
         // getters and setters
     }
 
