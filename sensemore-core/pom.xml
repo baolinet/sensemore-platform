@@ -49,21 +49,23 @@
           <artifactId>spring-boot-starter-aop</artifactId>
       </dependency>
 
-      <dependency>
+<!--       <dependency>
           <groupId>org.hibernate.validator</groupId>
           <artifactId>hibernate-validator</artifactId>
-          <version>6.2.0.Final</version> <!-- 请根据需要选择合适的版本 -->
+          <version>6.2.0.Final</version>
       </dependency>
       <dependency>
           <groupId>javax.validation</groupId>
           <artifactId>validation-api</artifactId>
-          <version>2.0.1.Final</version> <!-- 请根据需要选择合适的版本 -->
+          <version>2.0.1.Final</version>
       </dependency>
       <dependency>
           <groupId>org.glassfish</groupId>
           <artifactId>javax.el</artifactId>
-          <version>3.0.0</version> <!-- 这是 EL 表达式语言的实现 -->
-      </dependency>
+          <version>3.0.0</version>
+      </dependency> -->
+
+
 
     <dependency>
         <groupId>org.springframework.boot</groupId>

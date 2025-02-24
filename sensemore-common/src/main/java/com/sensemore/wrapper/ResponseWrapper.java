@@ -20,6 +20,7 @@ public class ResponseWrapper<T> {
         ResponseWrapper<T> result = new ResponseWrapper<>();
         result.code = "400";
         result.msg = reason;
+        result.data = (T) "";
         return result;
     }
 
@@ -27,6 +28,7 @@ public class ResponseWrapper<T> {
         ResponseWrapper<T> result = new ResponseWrapper<>();
         result.code = "500";
         result.msg = error;
+        result.data = (T) "";
         return result;
     }
 }

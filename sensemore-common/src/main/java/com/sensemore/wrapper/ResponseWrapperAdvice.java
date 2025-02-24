@@ -3,7 +3,9 @@ package com.sensemore.wrapper;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.core.MethodParameter;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.GenericHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -19,23 +21,19 @@ import com.sensemore.converter.JsonConverter;
 @ControllerAdvice
 public class ResponseWrapperAdvice implements ResponseBodyAdvice<Object> {
 
-    private static final MediaType JSON_MEDIA_TYPE = MediaType.parseMediaType(MediaType.APPLICATION_JSON_VALUE);
-
     @Override
-    @Nullable
-    public Object beforeBodyWrite(Object obj, MethodParameter methodParameter,
-            MediaType mediaType,
-            Class<? extends HttpMessageConverter<?>> aClass,
-            ServerHttpRequest serverHttpRequest,
-            ServerHttpResponse serverHttpResponse) {
-        if (obj == null) {
+    public Object beforeBodyWrite(Object body, MethodParameter returnType,
+                                  MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType,
+                                  ServerHttpRequest request, ServerHttpResponse response) {
+
+        if(body == null){
             return ResponseWrapper.success("");
         }
+        
+        Object result = ResponseWrapper.success(body);
 
-        Object result = ResponseWrapper.success(obj);
-
-        if (aClass == StringHttpMessageConverter.class) {
-            serverHttpResponse.getHeaders().setContentType(JSON_MEDIA_TYPE);
+        if (selectedConverterType == StringHttpMessageConverter.class) {
+            response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
             result = JsonConverter.toJson(result);
         }
 
@@ -45,6 +43,6 @@ public class ResponseWrapperAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
         // 全部都走这个Advice，也可以自己过滤
-        return true;
+        return returnType.getParameterType() != ResponseWrapper.class;
     }
 }
