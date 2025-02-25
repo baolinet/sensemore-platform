@@ -8,10 +8,12 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
+@Profile({"prod"})
 public class LoggingAspect {
  
     // 前置通知：在方法执行之前执行

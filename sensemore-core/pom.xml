@@ -77,6 +77,20 @@
         <artifactId>caffeine</artifactId>
     </dependency>
 
+     <!-- EasyExcel 依赖项 -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>easyexcel</artifactId>
+        <version>4.0.3</version>
+    </dependency>
+
+    <!-- 如果需要读写大文件，避免OOM -->
+<!--     <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>easyexcel-sax</artifactId>
+        <version>4.0.3</version>
+    </dependency> -->
+
     <dependency>
       <artifactId>sensemore-common</artifactId>
       <groupId>com.sensemore</groupId>

@@ -12,6 +12,7 @@ import org.springframework.retry.annotation.EnableRetry;
 import com.sensemore.bean_sam.*;
 import com.sensemore.cache_sam.CacheService;
 import com.sensemore.event_sam.MessageEvent;
+import com.sensemore.excel_sam.ExcelFillUtil;
 import com.sensemore.properties_sam.AppConfig;
 import com.sensemore.retry_sam.RetryInvoker;
 
@@ -61,6 +62,9 @@ public class App
 
 			cacheService.findBookByIsbn("abcd");
 			cacheService.findBookByIsbn("abcd");
+
+			ExcelFillUtil.readExcel();
+			ExcelFillUtil.templateFill();
 		};
 	}
 }
