@@ -42,20 +42,12 @@
                 <scope>import</scope>
             </dependency>
             <!-- 其他共享依赖项可以在这里定义 -->
-
-              <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>3.8.1</version>
-                <scope>test</scope>
-              </dependency>
-              
-              <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.34</version> <!-- 使用适当的Lombok版本 -->
-                <scope>provided</scope>
-              </dependency>
+            <dependency>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.34</version> <!-- 使用适当的Lombok版本 -->
+              <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
