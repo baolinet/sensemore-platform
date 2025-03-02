@@ -20,8 +20,8 @@ spring:
     # 数据库连接密码
     password: AVNS_OApBPCrx7zDpxEGs_jZ
 
-server:
-  port: 8088
+#server:
+#  port: 8088
 
 logging:
   level:
@@ -29,6 +29,7 @@ logging:
     reactor.netty.http.server: DEBUG
     reactor.netty.http.client: DEBUG
     com.sensemore.repository: DEBUG
+#    org.springframework: DEBUG
   
 # mybatis 的配置
 mybatis:

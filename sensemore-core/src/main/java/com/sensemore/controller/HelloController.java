@@ -21,6 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RestController
 public class HelloController {
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello Core";
+    }
+
     @GetMapping("/hello/{param}")
     public String getMethodName(@PathVariable("param") String param) {
         return "hello:" + param;
