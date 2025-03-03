@@ -19,7 +19,13 @@ spring:
     username: avnadmin
     # 数据库连接密码
     password: AVNS_OApBPCrx7zDpxEGs_jZ
-
+  data:
+      mongodb:
+        database: admin
+        host: 127.0.0.1
+        port: 27017
+        username: root
+        password: root
 #server:
 #  port: 8088
 
